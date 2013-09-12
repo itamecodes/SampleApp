@@ -1,12 +1,14 @@
 package com.vivek.phunwaresampleapp.app;
 
-import com.vivek.phunwaresampleapp.R;
+import java.util.ArrayList;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
+
+import com.vivek.phunwaresampleapp.R;
 
 /**
  * An activity representing a single Item detail screen. This activity is only
@@ -41,10 +43,11 @@ public class VenueDetailActivity extends ActionBarActivity {
 			String url=intentFromListActivity.getStringExtra("imageurl");
 			String address=intentFromListActivity.getStringExtra("address");
 			String locationName=intentFromListActivity.getStringExtra("venuelocation");
+			ArrayList<String> scheduleList=intentFromListActivity.getStringArrayListExtra("schedulelist");
 			// Create the detail fragment and add it to the activity
 			// using a fragment transaction.
 			
-			VenueDetailFragment venueDetailFragment=VenueDetailFragment.newInstance(name, url, locationName, address);
+			VenueDetailFragment venueDetailFragment=VenueDetailFragment.newInstance(name, url, locationName, address,scheduleList);
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.item_detail_container, venueDetailFragment).commit();
 		}

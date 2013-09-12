@@ -4,6 +4,7 @@ package com.vivek.phunwaresampleapp.utils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -76,6 +77,25 @@ public class ScheduleItem {
 	public int hashCode() {
 		String s = getStartDateString() + getEndDateString();
 		return s.hashCode();
+	}
+	
+	public static Date convertToDefaultTimeZOne(Date date){
+		Date utcDate,defaultDate=null;
+		SimpleDateFormat utcDateformatter=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z"); 
+		utcDateformatter.setTimeZone(TimeZone.getTimeZone("UTC"));  
+		String utcdateString=utcDateformatter.format(date); 
+		try {
+				utcDate=utcDateformatter.parse(utcdateString);
+				utcDateformatter.setTimeZone(TimeZone.getDefault());
+				String defaultdateString=utcDateformatter.format(utcDate);
+				defaultDate=utcDateformatter.parse(defaultdateString);
+		} catch (ParseException e) {
+			
+		}
+		return defaultDate;
+		
+		
+		
 	}
 
 }

@@ -888,6 +888,7 @@ containing a value of this type.
  Minimum width of the search view text entry area. 
          */
         public static final int abc_search_view_text_min_width=0x7f08000b;
+        public static final int leftfragwidth=0x7f080010;
     }
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;
@@ -977,7 +978,12 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int backgroundforentirelayout=0x7f020057;
+        public static final int backgroundforlistview=0x7f020058;
+        public static final int ic_launcher=0x7f020059;
+        public static final int ic_menu_home=0x7f02005a;
+        public static final int imageloading=0x7f02005b;
+        public static final int imagenotfound=0x7f02005c;
     }
     public static final class id {
         public static final int action_bar=0x7f05001a;
@@ -1011,16 +1017,18 @@ containing a value of this type.
         public static final int icon=0x7f050028;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050025;
-        public static final int imageview=0x7f050044;
+        public static final int imageview=0x7f050046;
         public static final int item_detail_container=0x7f050042;
         public static final int item_list=0x7f050043;
         public static final int left_icon=0x7f050031;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050027;
+        public static final int listpane=0x7f050045;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
+        public static final int progressBarcelebrity=0x7f050044;
         public static final int progress_circular=0x7f050034;
         public static final int progress_horizontal=0x7f050035;
         public static final int radio=0x7f05002d;
@@ -1036,6 +1044,7 @@ containing a value of this type.
         public static final int search_plate=0x7f05003c;
         public static final int search_src_text=0x7f05003d;
         public static final int search_voice_btn=0x7f050041;
+        public static final int shareactionitem=0x7f05004d;
         public static final int shortcut=0x7f05002c;
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
@@ -1043,16 +1052,17 @@ containing a value of this type.
         public static final int split_action_bar=0x7f05001c;
         public static final int submit_area=0x7f05003f;
         public static final int tabMode=0x7f050002;
+        public static final int thecontainer=0x7f05004a;
         public static final int title=0x7f050029;
         public static final int title_container=0x7f050030;
         public static final int top_action_bar=0x7f05001e;
         public static final int up=0x7f05001f;
         public static final int useLogo=0x7f050003;
-        public static final int venueaddress=0x7f050049;
-        public static final int venuedetailaddress=0x7f050046;
-        public static final int venuedetaillocation=0x7f050047;
-        public static final int venuedetailname=0x7f050045;
-        public static final int venuename=0x7f050048;
+        public static final int venueaddress=0x7f05004c;
+        public static final int venuedetailaddress=0x7f050048;
+        public static final int venuedetaillocation=0x7f050049;
+        public static final int venuedetailname=0x7f050047;
+        public static final int venuename=0x7f05004b;
         public static final int withText=0x7f05000c;
     }
     public static final class integer {
@@ -1126,6 +1136,9 @@ containing a value of this type.
         public static final int fragment_item_detail=0x7f03001b;
         public static final int support_simple_spinner_dropdown_item=0x7f03001c;
         public static final int venueitem=0x7f03001d;
+    }
+    public static final class menu {
+        public static final int shareaction=0x7f0c0000;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 

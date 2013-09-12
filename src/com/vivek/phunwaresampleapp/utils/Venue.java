@@ -41,7 +41,7 @@ public class Venue {
 	private String mTicketLink;
 	@SerializedName("image_url")
 	private String mImageUrl;
-	//@SerializedName("schedule")
+	@SerializedName("schedule")
 	private List<ScheduleItem> mSchedule;
 
 	// computed fields

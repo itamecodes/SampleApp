@@ -1,11 +1,9 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:background="@drawable/backgroundforentirelayout"
     android:baselineAligned="false"
-    android:orientation="horizontal"
     android:showDividers="middle"
     tools:context=".VenueListActivity" >
 
@@ -19,19 +17,44 @@
     For more on layout aliases, see:
     http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
     -->
+	<RelativeLayout
+	    android:layout_width="@dimen/leftfragwidth"
+	    android:layout_height="match_parent"
+	    android:background="@drawable/backgroundforlistview"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+    	android:layout_marginRight="8dp"
+    	android:id="@+id/listpane"
+	    >
+		<ProgressBar 
+			android:id="@+id/progressBarcelebrity"	
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:visibility="gone"
+			android:indeterminate="true"
+			android:layout_centerInParent="true"
+			
+		/>
+		<fragment
+		    android:id="@+id/item_list"
+		    android:name="com.vivek.phunwaresampleapp.app.VenueListFragment"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_centerInParent="true"
+		    android:layout_marginLeft="16dp"
+		    android:layout_marginRight="16dp"
+		    android:layout_marginBottom="16dp"
+		    android:layout_marginTop="16dp"
+		    tools:layout="@android:layout/list_content" />
 
-    <fragment
-        android:id="@+id/item_list"
-        android:name="com.vivek.phunwaresampleapp.app.VenueListFragment"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        tools:layout="@android:layout/list_content" />
-
-    <FrameLayout
+</RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
         android:id="@+id/item_detail_container"
-        android:layout_width="0dp"
+        android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_weight="3" />
+	    android:layout_toRightOf="@id/listpane"
+        />
 
-</LinearLayout>
+</RelativeLayout>

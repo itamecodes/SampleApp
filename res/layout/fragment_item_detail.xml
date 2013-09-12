@@ -1,54 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginBottom="16dp"
+    android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/backgroundforlistview"
+    
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         >
+
     <ImageView
         android:id="@+id/imageview"
-        android:layout_width="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="0dp"
-        android:layout_weight="1"></ImageView>
+        android:layout_width="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:contentDescription="image for the venue"
+        android:src="@drawable/imageloading"
+        android:layout_marginTop="16dp"
+        ></ImageView>
     
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        >
+    
     <TextView 
     android:id="@+id/venuedetailname"
-    style="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
+    android:layout_marginTop="16dp"
     android:textIsSelectable="true"
+    android:paddingLeft="12dp"
+    android:layout_below="@id/imageview"
+    android:textSize="20sp"
+    android:textStyle="bold"
     tools:context=".VenueDetailFragment" />
     
     <TextView 
     android:id="@+id/venuedetailaddress"
-    style="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
+    android:paddingLeft="12dp"
+    android:paddingTop="10dp"
     android:textIsSelectable="true"
+    android:textSize="15sp"
+    android:textStyle="italic"
+    android:layout_below="@id/venuedetailname"
     tools:context=".VenueDetailFragment" />
     
     <TextView 
     android:id="@+id/venuedetaillocation"
-    style="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
+    android:layout_below="@id/venuedetailaddress"
+	android:paddingLeft="12dp"
+    android:paddingTop="10dp"
+     android:textSize="15sp"
+    android:textStyle="italic"
     android:textIsSelectable="true"
     tools:context=".VenueDetailFragment" />
+    <LinearLayout 
+        android:orientation="vertical"
+        android:id="@+id/thecontainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/venuedetaillocation"></LinearLayout>
         
-    </LinearLayout>
+    </RelativeLayout>
     
     
     
     
-</LinearLayout>
+</ScrollView>
+
+</RelativeLayout>

@@ -17,6 +17,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.vivek.phunwaresampleapp.utils.Venue;
 import com.vivek.phunwaresampleapp.utils.WrappedAsyncTaskLoader;
@@ -40,7 +41,9 @@ public class VenueLoader extends WrappedAsyncTaskLoader<List<Venue>> {
 		HttpURLConnection urlConnection=null;
 		try{
 			urlConnection=(HttpURLConnection) new URL(AMAZON_URL).openConnection();
-			//urlConnection.setRequestProperty("Accept", "application/json");
+			urlConnection.setRequestProperty("Accept", "application/json");
+			int maxStale = 60 * 60 * 24 * 28; // tolerate 4-weeks stale
+			urlConnection.addRequestProperty("Cache-Control", "max-stale=" + maxStale);
 			InputStream inputStream=new BufferedInputStream(urlConnection.getInputStream());
 			BufferedReader bufReader=new BufferedReader(new InputStreamReader(inputStream));
 			String line=null;
@@ -49,7 +52,7 @@ public class VenueLoader extends WrappedAsyncTaskLoader<List<Venue>> {
 			}
 			Log.v("vivek","17");
 			mVenueJson=mStringBuilder.toString();
-			Gson gson=new Gson();
+			Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss Z").create();
 			Type listType=new TypeToken<List<Venue>>(){}.getType();
 			mVenueList=(List<Venue>)gson.fromJson(mVenueJson, listType);
 			Log.v("testing","  "+mVenueList.get(0).getName());
@@ -65,7 +68,7 @@ public class VenueLoader extends WrappedAsyncTaskLoader<List<Venue>> {
 		return mVenueList;
 	}
 	
-	public static void longInfo(String str) {
+	private static void longInfo(String str) {
 	    if(str.length() > 4000) {
 	        Log.i("vivek",""+str.substring(0, 4000));
 	        longInfo(str.substring(4000));
